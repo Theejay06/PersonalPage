@@ -1,0 +1,220 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #f7f7f7;
+    color: #333;
+}
+
+.back-to-top {
+position: fixed;
+bottom: 30px;
+right: 30px;
+color: black;
+background-color: white;
+width: 50px;
+height: 50px;
+text-align: center;
+line-height: 50px;
+font-size: 24px;
+border-radius: 50%;
+text-decoration: none;
+box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+transition: all 0.3s ease;
+z-index: 1000;
+}
+
+.back-to-top:hover {
+background-color: #a2adb8;
+}
+
+
+/* Navbar */
+#navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 80px 15px 40px;
+}
+
+#logo a {
+    color: white;
+    text-decoration: none;
+    font-size: 32px;
+    font-family: 'Radley', serif;
+}
+
+#nav {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+#nav > a {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    font-family: 'Radley', serif;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown > a {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    font-family: 'Radley', serif;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.9);
+    min-width: 120px;
+    z-index: 100;
+    padding: 8px 0;
+}
+
+.dropdown-menu a {
+    display: block;
+    position: relative;
+    padding: 8px 12px;
+    color: darkred;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: 'Radley', serif;
+    white-space: nowrap;
+}
+
+.dropdown-menu a::after {
+    content: '';
+    position: absolute;
+    bottom: 4px;
+    left: 12px;
+    width: 0;
+    height: 2px;
+    background: darkred;
+    transition: width 0.3s ease;
+}
+
+.dropdown-menu a:hover::after {
+    width: calc(100% - 24px);
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Hero */
+.hero {
+    position: relative;
+    text-align: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+
+.hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    opacity: 0.5;
+}
+
+.hero h1,
+.hero p,
+.hero-buttons {
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 6rem;
+    font-weight: 700;
+    color: white;
+    font-family: 'Radley', serif;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: white;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.hero-buttons {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.hero-buttons a {
+    text-decoration: none;
+    color: white;
+    background-color: #9c1d1c;
+    border-radius: 25px;
+    padding: 0.7rem 1.5rem;
+}
+
+.hero-buttons a:hover {
+    background-color: rgb(231, 223, 223);
+    color: #9c1d1c;
+    transition: all 0.3s ease;
+}
+
+/* Map Section */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    width: 100%;
+}
+
+.instruction {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    color: #333;
+}
+
+.map-container {
+    max-width: 1200px;
+    width: 100%;
+    background: #ffffff;
+    padding: 1rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    margin: 0 auto;
+}
+
+.map-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+}
