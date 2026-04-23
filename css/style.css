@@ -4,7 +4,9 @@
     box-sizing: border-box;
 }
 
-/* Navbar */
+/* =====================
+   NAVBAR
+   ===================== */
 #navbar {
     position: absolute;
     top: 0;
@@ -25,6 +27,7 @@
     font-family: 'Radley', serif;
 }
 
+/* Desktop nav */
 #nav {
     display: flex;
     align-items: center;
@@ -90,16 +93,19 @@
     display: block;
 }
 
-/* Hamburger */
+/* =====================
+   HAMBURGER BUTTON
+   ===================== */
 .hamburger {
-    display: none;
+    display: none; /* hidden on desktop */
     flex-direction: column;
-    gap: 5px;
+    justify-content: center;
+    gap: 6px;
     cursor: pointer;
-    z-index: 1100;
     background: none;
     border: none;
     padding: 4px;
+    z-index: 1100;
 }
 
 .hamburger span {
@@ -112,33 +118,33 @@
 }
 
 .hamburger.open span:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
+    transform: translateY(9px) rotate(45deg);
 }
-
 .hamburger.open span:nth-child(2) {
     opacity: 0;
 }
-
 .hamburger.open span:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
+    transform: translateY(-9px) rotate(-45deg);
 }
 
-/* Mobile Nav Overlay */
+/* =====================
+   MOBILE NAV OVERLAY
+   ===================== */
 .mobile-nav {
-    display: none;
+    display: none; /* hidden by default */
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(30, 30, 30, 0.97);
+    background: rgba(20, 20, 20, 0.97);
     z-index: 1050;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 20px;
+    justify-content: flex-start;
     overflow-y: auto;
-    padding: 80px 20px 40px;
+    padding: 90px 20px 50px;
+    gap: 16px;
 }
 
 .mobile-nav.open {
@@ -146,7 +152,7 @@
 }
 
 .mobile-nav a,
-.mobile-nav .mobile-dropdown-toggle {
+.mobile-dropdown-toggle {
     color: white;
     text-decoration: none;
     font-size: 26px;
@@ -154,14 +160,14 @@
     background: none;
     border: none;
     cursor: pointer;
-    display: block;
     text-align: center;
     width: 100%;
+    padding: 4px 0;
 }
 
 .mobile-dropdown-toggle {
-    color: white;
-    padding: 0;
+    color: rgba(255,255,255,0.85);
+    font-size: 22px;
 }
 
 .mobile-dropdown-links {
@@ -169,7 +175,7 @@
     flex-direction: column;
     align-items: center;
     gap: 10px;
-    margin-top: 8px;
+    width: 100%;
 }
 
 .mobile-dropdown-links.open {
@@ -177,11 +183,14 @@
 }
 
 .mobile-dropdown-links a {
-    font-size: 20px;
-    color: rgba(255, 255, 255, 0.75);
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.65);
+    padding: 2px 0;
 }
 
-/* Hero */
+/* =====================
+   HERO
+   ===================== */
 #Hero {
     position: relative;
     width: 100%;
@@ -221,7 +230,9 @@
     font-family: 'Cormorant Garamond', cursive;
 }
 
-/* About */
+/* =====================
+   ABOUT
+   ===================== */
 .about-section {
     padding: 80px 3%;
     background-color: #f5f5f5;
@@ -279,7 +290,9 @@
     font-family: 'Inter', sans-serif;
 }
 
-/* Stories */
+/* =====================
+   STORIES
+   ===================== */
 .stories-section {
     padding: 80px 10%;
     background-color: #ffffff;
@@ -366,7 +379,9 @@
     color: white;
 }
 
-/* Contact */
+/* =====================
+   CONTACT
+   ===================== */
 .contact-section {
     padding: 80px 10%;
     background: #556269;
@@ -471,7 +486,9 @@
     transform: translateY(-5px);
 }
 
-/* Back to Top */
+/* =====================
+   BACK TO TOP
+   ===================== */
 .back-to-top {
     position: fixed;
     bottom: 30px;
@@ -495,22 +512,21 @@
 }
 
 /* =====================
-   RESPONSIVE BREAKPOINTS
+   RESPONSIVE — ≤1200px
+   Large tablets / small desktops
    ===================== */
-
-/* Large tablets / small desktops (≤1200px) */
 @media (max-width: 1200px) {
     #navbar {
-        padding: 15px 40px 15px 30px;
+        padding: 15px 30px;
     }
 
     #nav {
-        gap: 18px;
+        gap: 16px;
     }
 
     #nav > a,
     .dropdown > a {
-        font-size: 20px;
+        font-size: 18px;
     }
 
     .stories-grid {
@@ -530,13 +546,17 @@
     }
 }
 
-/* Tablets (≤900px) */
+/* =====================
+   RESPONSIVE — ≤900px
+   Tablets: show hamburger, hide desktop nav
+   ===================== */
 @media (max-width: 900px) {
-    /* Hide desktop nav, show hamburger */
+    /* Hide desktop nav */
     #nav {
         display: none;
     }
 
+    /* Show hamburger */
     .hamburger {
         display: flex;
     }
@@ -545,11 +565,10 @@
         padding: 15px 24px;
     }
 
-    /* About stacks vertically */
+    /* About stacks */
     .about-container {
         flex-direction: column;
         gap: 40px;
-        flex-wrap: wrap;
     }
 
     .about-image {
@@ -593,9 +612,11 @@
     }
 }
 
-/* Mobile (≤600px) */
+/* =====================
+   RESPONSIVE — ≤600px
+   Mobile phones
+   ===================== */
 @media (max-width: 600px) {
-    /* Hero name */
     .nameBox {
         flex-direction: column;
         align-items: center;
@@ -607,7 +628,6 @@
         letter-spacing: 4px;
     }
 
-    /* Stories go single column */
     .stories-grid {
         grid-template-columns: 1fr;
         gap: 20px;
@@ -625,16 +645,10 @@
         padding: 50px 4%;
     }
 
-    /* About */
     .about-section {
         padding: 50px 4%;
     }
 
-    .about-text h2 {
-        font-size: clamp(28px, 8vw, 48px);
-    }
-
-    /* Contact */
     .contact-section {
         padding: 50px 5%;
     }
@@ -647,17 +661,12 @@
         font-size: 16px;
     }
 
-    .contact-item {
-        gap: 14px;
-    }
-
     .contact-icon {
         width: 42px;
         height: 42px;
         font-size: 24px;
     }
 
-    /* Back to top closer to edge */
     .back-to-top {
         bottom: 20px;
         right: 16px;
@@ -665,20 +674,5 @@
         height: 42px;
         line-height: 42px;
         font-size: 20px;
-    }
-}
-
-/* Very small phones (≤380px) */
-@media (max-width: 380px) {
-    .stories-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .story-card {
-        height: 220px;
-    }
-
-    .contact-title {
-        font-size: 28px;
     }
 }
