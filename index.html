@@ -14,6 +14,8 @@
         <img src="images/home/bgImage2.png" alt="myPicture">
         <div id="navbar">
             <h1 id="logo"><a href="index.html">TT</a></h1>
+
+            <!-- Desktop Nav -->
             <div id="nav">
                 <a href="#About">About</a>
                 <a href="#Stories">Home Pages</a>
@@ -58,35 +60,79 @@
                 </div>
                 <a href="places/bucket-list.html">Bucket List</a>
             </div>
+
+            <!-- Hamburger Button (mobile) -->
+            <button class="hamburger" id="hamburger" aria-label="Open menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
+
+        <!-- Mobile Nav Overlay -->
+        <nav class="mobile-nav" id="mobileNav">
+            <a href="#About" class="mobile-link">About</a>
+            <a href="#Stories" class="mobile-link">Home Pages</a>
+            <a href="#Contact" class="mobile-link">Contact</a>
+            <a href="pages/bio.html" class="mobile-link">Biography</a>
+
+            <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown('drop-blog')">Blog Stories ▾</button>
+            <div class="mobile-dropdown-links" id="drop-blog">
+                <a href="pages/BS1.html">Story 1</a>
+                <a href="pages/BS2.html">Story 2</a>
+                <a href="pages/BS3.html">Story 3</a>
+            </div>
+
+            <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown('drop-gallery')">Gallery ▾</button>
+            <div class="mobile-dropdown-links" id="drop-gallery">
+                <a href="Gallery/childhood.html">Childhood Dump</a>
+                <a href="Gallery/antipolo.html">Antipolo Dump</a>
+                <a href="Gallery/fieldtrip.html">Field Trip Dump</a>
+                <a href="Gallery/tagaytay.html">Tagaytay Dump</a>
+                <a href="Gallery/elyu.html">Elyu Dump</a>
+                <a href="Gallery/ue.html">UE Dump</a>
+            </div>
+
+            <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown('drop-media')">Media ▾</button>
+            <div class="mobile-dropdown-links" id="drop-media">
+                <a href="Media/beats.html">Beats</a>
+                <a href="Media/movies.html">Film Movies</a>
+                <a href="Media/tvshows.html">Film TV Shows</a>
+            </div>
+
+            <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown('drop-places')">Dream Places ▾</button>
+            <div class="mobile-dropdown-links" id="drop-places">
+                <a href="places/netherlands.html">Netherlands</a>
+                <a href="places/france.html">France</a>
+                <a href="places/malaysia.html">Malaysia</a>
+                <a href="places/japan.html">Japan</a>
+                <a href="places/brazil.html">Brazil</a>
+            </div>
+
+            <a href="places/bucket-list.html" class="mobile-link">Bucket List</a>
+        </nav>
 
         <div class="nameBox">
             <span>THEEJAY</span>
             <span>TAGAMA</span>
         </div>
-
-        
     </div>
 
     <section id="About" class="about-section">
         <div class="about-container">
-           
             <div class="about-image">
                 <video controls>
                     <source src="images/home/Video/video.mp4" type="video/mp4">
                 </video>
             </div>
-
-          
             <div class="about-text">
                 <h2>HELLO I AM THEEJAY!</h2>
                 <p>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I’m Theejay Tagama, a second-year computer science student at the University of the East with a strong passion for AI, cybersecurity, and 
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I'm Theejay Tagama, a second-year computer science student at the University of the East with a strong passion for AI, cybersecurity, and 
                     emerging technologies. I love exploring new ideas, solving challenging problems, and continuously improving my skills. Beyond academics, 
                     I enjoy sharing my experiences and knowledge through blog stories and personal projects, as well as experimenting with new technologies to 
-                    prepare for a future career in tech. I’m always eager to learn, collaborate, and contribute to meaningful projects that make an impact.
+                    prepare for a future career in tech. I'm always eager to learn, collaborate, and contribute to meaningful projects that make an impact.
                 </p>
-
                 <div id="MoreAboutMe">
                     <a href="pages/bio.html">More About Me</a>
                 </div>
@@ -97,10 +143,8 @@
     <section id="Stories" class="stories-section">
         <p class="stories-label">EXPLORE</p>
         <h2 class="stories-title">Latest Pages</h2>
-        
 
         <div class="stories-grid">
-            
             <a href="pages/blogs.html" class="story-card">
                 <img src="images/home/blogs.png" alt="Blog Story">
                 <div class="story-overlay">
@@ -125,23 +169,19 @@
                 </div>
             </a>
 
-
             <a href="places/index.html" class="story-card">
-                <img src="images/Places/places.png" alt="Media Collection">
+                <img src="images/Places/places.png" alt="Dream Places">
                 <div class="story-overlay">
                     <span class="story-category">Countries</span>
                     <h3 class="story-title">Dream Places</h3>
                 </div>
             </a>
-
-
         </div>
     </section>
 
     <!-- CONTACT SECTION -->
     <section id="Contact" class="contact-section">
         <div class="contact-container">
-            
             <div class="contact-info">
                 <p class="contact-label">GET IN TOUCH</p>
                 <h2 class="contact-title">Let's Connect</h2>
@@ -150,7 +190,6 @@
                     I'm always open to discussing new projects, creative ideas, or opportunities.
                 </p>
 
-                <!-- Contact Details -->
                 <div class="contact-details">
                     <div class="contact-item">
                         <div class="contact-icon">📧</div>
@@ -169,7 +208,6 @@
                     </div>
                 </div>
 
-                <!-- Social Media Links -->
                 <div class="social-links">
                     <a href="https://www.facebook.com/theejay.tagama.58" target="_blank" class="social-btn">
                         <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
@@ -198,10 +236,29 @@
 
     <a href="#top" class="back-to-top">↑</a>
 
-    
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const mobileNav = document.getElementById('mobileNav');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('open');
+            mobileNav.classList.toggle('open');
+            document.body.style.overflow = mobileNav.classList.contains('open') ? 'hidden' : '';
+        });
+
+        // Close mobile nav when a link is clicked
+        mobileNav.querySelectorAll('a.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('open');
+                mobileNav.classList.remove('open');
+                document.body.style.overflow = '';
+            });
+        });
+
+        function toggleMobileDropdown(id) {
+            const el = document.getElementById(id);
+            el.classList.toggle('open');
+        }
+    </script>
 </body>
 </html>
-
-
-
-
